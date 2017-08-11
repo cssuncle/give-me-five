@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            margin: 50px auto;
+            line-height: 100px;
+            text-align: center;
+            background-color: #838991;
+        }
+        span{
+            /* 把span设置为块级元素 设置浮动 在一行内显示*/
+            display: block;
+            float: left;
+        }
+        span:nth-child(1){
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            /* 设置左轴为倾斜轴心*/
+            transform-origin: left;
+
+            transition: all 2s linear;
+        }
+        span:nth-child(3){
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            transition: all 2s linear;
+            transform-origin: right;
+        }
+        span:nth-child(2){
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            background-color: hotpink;
+            transition: all 2s linear;
+        }
+        .box:hover span:nth-child(1){
+            /* 鼠标移入box时 第一个span以左轴为轴心 沿着Y轴倾斜30°向上倾斜*/
+            transform: skew(0deg,-30deg);
+        }
+        .box:hover span:nth-child(3){
+            /* 向下倾斜*/
+            transform: skew(0deg,30deg);
+
+        }
+        .box:hover span:nth-child(2){
+            /*向上移动*/
+            transform: translate(0,-30px);
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+
+    <span></span>
+    <span>求翻牌</span>
+    <span></span>
+</div>
+</body>
+</html>
